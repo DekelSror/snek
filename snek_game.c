@@ -8,22 +8,18 @@
 
 #include "snek.h"
 
-#define height (40)
-#define length (120)
+#define height (21)
+#define length (77)
 
 char screen[height * length] = { 0 };
 char snek[height * length] = { 0 };
 
-
 int head_x = 15;
 int head_y = 5;
-
 char snek_direction = dir_right;
 int snek_len = 0;
-
 int growing = 0;
 int next_food = -1;
-
 int turn = 0;
 int alive = 1;
 
@@ -32,7 +28,6 @@ void put_snek(void)
 {
     int x = head_x;
     int y = head_y;
-
 
     for (int i = 0; i < snek_len; i++)
     {
@@ -148,7 +143,7 @@ void draw(void)
         }
     }
 
-    cursor_to(height + 3, 1);
+    cursor_to(height + 2, 1);
     printf("[%d] head [%d/%d] len %d direction %d growing %d", turn, head_x, head_y, snek_len, snek_direction, growing);
 }
 
@@ -179,7 +174,10 @@ void final_draw(void)
         }
     }
 
+    char line_buf[length] = { 0 };
+    memset(line_buf, ' ', length);
     cursor_to(height + 2, 1);
+    printf("%s", line_buf);
     printf("%d turns played; length %d\n", turn, snek_len);
 }
 
@@ -208,10 +206,7 @@ void game(void)
 
         turn++;
     }
-
 }
-
-
 
 void setup(void)
 {
@@ -225,7 +220,6 @@ void setup(void)
     snek_len = 6;
 }
 
-
 int main(void)
 {
     prepare_input();
@@ -235,12 +229,8 @@ int main(void)
     game();
     final_draw();
     memset(screen, 0, length * height);
-    reset_input();
     draw_end_title();
-
-    cursor_to(height + 3, 0);
-    printf("\n\n");
+    reset_input();
     
-
     return 0;
 }

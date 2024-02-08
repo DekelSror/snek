@@ -1,6 +1,6 @@
 
 
-### snek for the terminal.
+### snek for the terminal
 
 #### possible things to add - 
 * prevent self-collision by hitting left when going right
@@ -9,3 +9,4 @@
 * title animations and precise locations
 * args - custom dimensions, snek parts, borders, etc.
 * winnable - set a target length at terget turn
+* snek decay - if not eating enough
