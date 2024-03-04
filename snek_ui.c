@@ -63,7 +63,7 @@ void draw_title(void)
     }
     
     cursor_to(15, 20);
-    printf("press enter to start...\n");
+    printf("press anu key to start...\n");
     int any_key;
     scanf("%d", &any_key);
 }

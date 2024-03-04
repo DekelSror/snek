@@ -2,6 +2,8 @@
 
 ### snek for the terminal
 
+get the code -> make -> ./snek -> profit
+
 #### possible things to add - 
 * prevent self-collision by hitting left when going right
 * difficulty - speed up 
